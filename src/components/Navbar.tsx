@@ -6,7 +6,7 @@ import Switchbar from "../components/SwitchMode";
 const Navbar = () => {
   return (
     <>
-      <HStack justifyContent={"space-between"} padding={"20px"}>
+      <HStack justifyContent={"space-between"} padding={"10px"}>
         <Image boxSize="60px" src={logo}></Image>
         <Switchbar />
       </HStack>
