@@ -9,7 +9,7 @@ interface Genre{
 
 interface FetchGenresResponse {
     id : number;
-    result : Genre[];
+    results : Genre[];
 }
 
 const useGenres =() => {
@@ -24,9 +24,9 @@ const useGenres =() => {
 
       setLoading(true)
       apiClient
-        .get<FetchGenresResponse>("/genre" , { signal: controller.signal})
+        .get<FetchGenresResponse>("/genres" , { signal: controller.signal})
         .then((response) => {
-          setGenres(response.data.result)
+          setGenres(response.data.results)
           setLoading(false)
         })
         .catch((err) => {
