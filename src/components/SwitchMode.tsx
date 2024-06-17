@@ -4,7 +4,7 @@ const SwitchMode = () => {
 
   return (
     <>
-      <HStack>
+      <HStack whiteSpace={"nowrap"}>
         <Switch
           colorScheme="green"
           isChecked={colorMode === "dark"}
