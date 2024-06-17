@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Show, Grid, GridItem, HStack } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import { GameGrid } from "./components/GameGrid";
@@ -11,12 +11,10 @@ import { SortSelector } from "./components/SortSelector";
 export interface GameQuary {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 const App = () => {
-  // const [selectedGenre, setSelectGenre] = useState<Genre | null>(null);
-  // const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
-
   const [gameQuary, setGameQuary] = useState<GameQuary>({} as GameQuary);
 
   return (
@@ -50,7 +48,12 @@ const App = () => {
                 setGameQuary({ ...gameQuary, platform })
               }
             ></PlatformSelector>
-            <SortSelector />
+            <SortSelector
+              sortOrder={gameQuary.sortOrder}
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuary({ ...gameQuary, sortOrder })
+              }
+            />
           </HStack>
           <GameGrid gameQuary={gameQuary} />
         </GridItem>
