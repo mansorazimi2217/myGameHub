@@ -5,7 +5,6 @@ import App from "./App";
 import "./index.css";
 import theme from "./ThemMode";
 import { ColorModeScript } from "@chakra-ui/react";
-import App2 from "./myPortfolio/App2";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
