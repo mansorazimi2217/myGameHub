@@ -11,7 +11,7 @@ const MyHeading = ({ gameQuary }: Props) => {
     gameQuary.genre?.name || ""
   } Games`;
   return (
-    <Heading as={"h1"} marginY={5} fontSize={"x-large"}>
+    <Heading as={"h1"} marginY={5}>
       {temp}
     </Heading>
   );

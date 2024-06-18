@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenre";
 import getCroppedImageUrl from "../services/getCroppedImageUrl";
+import { Heading } from "@chakra-ui/react";
 
 interface Props {
   onSelected: (genre: Genre) => void;
@@ -23,16 +24,22 @@ const GenreList = ({ seletedGenre, onSelected }: Props) => {
 
   return (
     <>
+      <Heading fontSize={"2xl"} marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {data.map((gen) => (
           <ListItem padding="5px" key={gen.id}>
             <HStack>
               <Image
+                objectFit={"cover"}
                 boxSize="38px"
                 borderRadius={8}
                 src={getCroppedImageUrl(gen.image_background)}
               />
               <Button
+                whiteSpace={"normal"}
+                textAlign={"left"}
                 fontWeight={gen.id === seletedGenre?.id ? "bold" : "normal"}
                 onClick={() => {
                   onSelected(gen);
