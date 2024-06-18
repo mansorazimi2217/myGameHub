@@ -8,6 +8,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import { SortSelector } from "./components/SortSelector";
 import MyHeading from "./components/MyHeading";
+import Footer from "./components/Footer";
 
 export interface GameQuary {
   genre: Genre | null;
@@ -69,6 +70,8 @@ const App = () => {
           <GameGrid gameQuary={gameQuary} />
         </GridItem>
       </Grid>
+
+      <Footer />
     </>
   );
 };
